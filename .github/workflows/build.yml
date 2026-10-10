@@ -35,6 +35,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: DistantHorizonsSupport-JAR
-        path: |
-          build/libs/1.16.5/*.jar
-          build/libs/*.jar
+        path: build/libs/1.16.5/DistantHorizonsSupport-*.jar

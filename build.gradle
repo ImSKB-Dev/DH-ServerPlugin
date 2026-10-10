@@ -55,6 +55,20 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 }
 
+shadowJar {
+    archiveBaseName.set("DistantHorizonsSupport")
+    archiveVersion.set(version)
+    configurations = [project.configurations.shade]
+
+    relocate 'org.bstats', 'no.jckf.dhsupport.bstats'
+    relocate 'org.json', 'no.jckf.dhsupport.json'
+    relocate 'org.tukaani.xz', 'no.jckf.dhsupport.xz'
+    relocate 'com.tcoded.folialib', 'no.jckf.dhsupport.folialib'
+
+    exclude 'org/jetbrains/**'
+    exclude 'org/intellij/**'
+}
+
 paperVersions.each { mcVersion ->
     def taskSuffix = mcVersion.replace('.', '_')
     def taskName = "buildJar_${taskSuffix}"
