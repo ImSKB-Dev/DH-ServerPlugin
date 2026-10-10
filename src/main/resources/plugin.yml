@@ -1,0 +1,16 @@
+name: DHSupport
+version: ${version}
+main: ${mainClass}
+api-version: ${mcApiVersion}
+prefix: DHS
+folia-supported: true
+author: Jckf
+commands:
+  dhs:
+    description: Manage DH Support.
+    usage: /dhs
+    permission: distant_horizons.admin
+  dh:
+    description: Not used.
+    usage: /dh
+    permission: distant_horizons.admin
