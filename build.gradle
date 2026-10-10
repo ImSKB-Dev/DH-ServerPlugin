@@ -15,6 +15,20 @@ def paperVersions = [
     '1.16.5',
 ]
 
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mainClass", "no.jckf.dhsupport.bukkit.DhSupportBukkitPlugin"
+    inputs.property "mcApiVersion", "1.16"
+
+    filesMatching('plugin.yml') {
+        expand(
+            'version': project.version,
+            'mainClass': 'no.jckf.dhsupport.bukkit.DhSupportBukkitPlugin',
+            'mcApiVersion': '1.16'
+        )
+    }
+}
+
 repositories {
     mavenCentral()
     maven { url = 'https://repo.papermc.io/repository/maven-public/' }
